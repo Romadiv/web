@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Резюме</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="icon" href="icon.svg">
+	<link rel="apple-touch-icon" href="icon.svg">
+	<meta name="theme-color" content="#23221c">
+	<link rel="stylesheet" href="style.css">
+</head>
+<nav class="nav">
+	<a href="index.html"><svg viewBox="0 0 24 24">
+			<path d="M12 2 2 8v2h20V8l-10-6Zm-1 8H9v7H7v2h10v-2h-2v-7h-2v7h-1v-9Z" />
+		</svg>Резерв ID</a>
+	<a href="services.html"><svg viewBox="0 0 24 24">
+			<path
+				d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm9 4-2-1.2.4-2.3-2.2-.8L15.5 5l-2.2.9L12 4.5 10.7 5.9 8.5 5l-1.7 2.7-2.2.8.4 2.3L3 12l2 1.2-.4 2.3 2.2.8L8.5 21l2.2-.9 1.3 1.4 1.3-1.4 2.2.9 1.7-2.7 2.2-.8-.4-2.3L21 12Z" />
+		</svg>Сервіси</a>
+	<a href="vacancies.html"><svg viewBox="0 0 24 24">
+			<path
+				d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2Z" />
+		</svg>Вакансії</a>
+	<a href="menu.html"><svg viewBox="0 0 24 24">
+			<path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z" />
+		</svg>Меню</a>
+</nav>
+
+<body>
+
+	<!-- ===== ЗАСТАВКА ===== -->
+	<div class="splash" id="splash">
+		<img src="photo2.jpg" alt="">
+		<div class="skip" id="splashTip">завантаження…</div>
+	</div>
+
+	<!-- ===== ЕКРАН PIN ===== -->
+
+	<div class="lock" id="lock">
+		<h2>Код для входу</h2>
+		<div class="dots" id="dots">
+
+			<span class="dot"></span><span class="dot"></span>
+			<span class="dot"></span><span class="dot"></span>
+		</div>
+		<div class="err" id="err"></div>
+		<div class="pins" id="pins">
+			<button class="pin" data-k="1">1</button>
+			<button class="pin" data-k="2">2</button>
+			<button class="pin" data-k="3">3</button>
+			<button class="pin" data-k="4">4</button>
+			<button class="pin" data-k="5">5</button>
+			<button class="pin" data-k="6">6</button>
+			<button class="pin" data-k="7">7</button>
+			<button class="pin" data-k="8">8</button>
+			<button class="pin" data-k="9">9</button>
+			<button class="pin ghost"></button>
+			<button class="pin" data-k="0">0</button>
+			<button class="pin" data-k="del">⌫</button>
+		</div>
+		<h1>Не пам'ятаю код для входу</h1>
+	</div>
+	<div class="notif">
+		<span class="notifText">Сповіщення</span>
+		<svg class="bell" viewBox="0 0 24 24" aria-label="Дзвіночок">
+			<path d="M12 22a2.4 2.4 0 0 0 2.4-2.4H9.6A2.4 2.4 0 0 0 12 22Z" />
+			<path
+				d="M18.5 16.5v-5.2a6.5 6.5 0 0 0-5.2-6.4V4a1.3 1.3 0 1 0-2.6 0v.9a6.5 6.5 0 0 0-5.2 6.4v5.2L3.8 18.2h16.4Z" />
+		</svg>
+	</div>
+	<!-- ===== РЕЗЮМЕ ===== -->
+	<div class="resume" id="resume">
+
+		<!-- Рамка -->
+		<div class="card">
+
+			<!-- Шапка картки: РЕЗЮМЕ + сповіщення -->
+			<div class="headrow">
+				<span class="badge">Резерв ID</span>
+				<img class="logo" src="logo.png" alt="Логотип">
+
+
+			</div>
+
+			<!-- Фото ліворуч + дати праворуч -->
+			<div class="hero">
+				<div class="heroLeft">
+					<img class="photo" id="photo" alt="Фото" src="photo.jpg">
+				</div>
+				<div class="heroRight">
+					<div class="dateBlock">
+						<div class="dateLabel" id="rBirthLabel"></div>
+						<div class="dateValue" id="rBirth"></div>
+					</div>
+					<div class="dateBlock">
+						<div class="dateLabel" id="rWorkLabel"></div>
+						<div class="dateValue" id="rWork"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Стрічка -->
+			<div class="ticker"><span id="rTicker"></span></div>
+
+			<!-- статус -->
+			<div class="status">Військовозобов'язаний</div>
+
+			<!-- Ім'я + жовтий плюс праворуч -->
+			<div class="info">
+				<div class="name" id="rName"></div>
+				<div class="plus" id="plus">+</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Стрічка -->
+	<div class="ticker"><span id="rTicker"></span></div>
+
+	<!-- Ім'я + жовтий плюс праворуч -->
+	<div class="info">
+		<div class="name" id="rName"></div>
+		<div class="plus" id="plus">+</div>
+	</div>
+
+	</div>
+	</div>
+	</div>
+
+
+
+
+
+	<nav class="bottom-nav">
+		<!-- 1. Резюме ID (активний пункт з жирним шрифтом) -->
+		<a href="index.html" class="nav-item active">
+			<svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+				<path
+					d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 11v2h8v-2H8zm0 4v2h8v-2H8z" />
+			</svg>
+			<span class="nav-label">Резерв ID</span>
+		</a>
+
+		<!-- 2. Сервіси (4 квадратики) -->
+		<a href="services.html" class="nav-item">
+			<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+				stroke-linejoin="round">
+				<rect x="4" y="4" width="6.5" height="6.5" rx="1" />
+				<rect x="13.5" y="4" width="6.5" height="6.5" rx="1" />
+				<rect x="4" y="13.5" width="6.5" height="6.5" rx="1" />
+				<rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1" />
+			</svg>
+			<span class="nav-label">Сервіси</span>
+		</a>
+
+		<!-- 3. Вакансії -->
+		<a href="vacancies.html" class="nav-item">
+			<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<rect x="5" y="3" width="14" height="18" rx="2" />
+				<polygon points="12 8 15 12 12 16 9 12" fill="currentColor" stroke="none" />
+			</svg>
+			<span class="nav-label">Вакансії</span>
+		</a>
+
+		<!-- 4. Меню -->
+		<a href="menu.html" class="nav-item">
+			<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+				stroke-linecap="round">
+				<line x1="4" y1="7" x2="20" y2="7" />
+				<line x1="4" y1="12" x2="20" y2="12" />
+				<line x1="4" y1="17" x2="20" y2="17" />
+			</svg>
+			<span class="nav-label">Меню</span>
+		</a>
+	</nav>
+
+	<!-- ===== QR ===== -->
+	<div class="modal" id="modal">
+		<div class="qr">
+			<img src="qr.png" alt="QR-код">
+		</div>
+		<button class="close" id="closeModal"></button>
+	</div>
+
+
+	<script>
+		/* ================= ДАНІ ================= */
+		var DEFAULT_PIN = "1234";
+		var DATA = {
+			name: "ВІЛІВЧУК\nРоман\nВасильович",
+			birthLabel: "Дата народження",
+			birth: "27.07.1990",
+			workLabel: "Відстрочка до:",
+			work: "23.07.2027",
+			ticker: "Документ оновлено о 21:43 ┃ 11.11.2026 ●Документ оновлено о 21:43 ┃ 11.11.2026 ● "
+		};
+		var QR_TEXT = "https://t.me/username";
+
+		/* ================= УТИЛІТИ ================= */
+		function $(s) { return document.querySelector(s); }
+		function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) >>> 0; } return String(h); }
+
+		/* ================= ЗАСТАВКА ================= */
+		(function () {
+			var sp = $("#splash"), tip = $("#splashTip");
+			if (!sp) return;
+			var t = 3, timer = setInterval(function () {
+				t--; tip.textContent = "завантаження… " + t + " с";
+				if (t <= 0) { clearInterval(timer); finish(); }
+			}, 1000);
+			function finish() {
+				sp.classList.add("hide");
+				setTimeout(function () { sp.style.display = "none"; }, 500);
+			}
+			sp.addEventListener("click", function () { clearInterval(timer); finish(); });
+		})();
+
+		/* ================= PIN ================= */
+		(function () {
+			var KEY = "app_pin_v3";
+			if (!localStorage.getItem(KEY)) localStorage.setItem(KEY, hash(DEFAULT_PIN));
+
+			var entered = "";
+			var dots = $("#dots").children;
+			var err = $("#err");
+			var lock = $("#lock"), resume = $("#resume");
+
+			function render() {
+				for (var i = 0; i < dots.length; i++) dots[i].className = "dot" + (i < entered.length ? " on" : "");
+			}
+			function shake() {
+				err.textContent = "Неправильний пароль";
+				$("#dots").style.transform = "translateX(-6px)";
+				setTimeout(function () { $("#dots").style.transform = "translateX(6px)"; }, 110);
+				setTimeout(function () { $("#dots").style.transform = "translateX(0)"; }, 220);
+				setTimeout(function () { err.textContent = ""; }, 1200);
+			}
+			function submit() {
+				if (entered.length < 4) return;
+				if (hash(entered) === localStorage.getItem(KEY)) {
+					lock.classList.add("hidden");
+					resume.classList.add("show");
+					window.scrollTo(0, 0);
+				} else { shake(); entered = ""; render(); }
+			}
+			$("#pins").addEventListener("click", function (e) {
+				var k = e.target.getAttribute("data-k");
+				if (!k) return;
+				if (k === "del") { entered = entered.slice(0, -1); render(); return; }
+				if (entered.length >= 4) return;
+				entered += k; render();
+				if (entered.length === 4) setTimeout(submit, 120);
+			});
+			document.addEventListener("keydown", function (e) {
+				if (/^[0-9]$/.test(e.key) && entered.length < 4) { entered += e.key; render(); if (entered.length === 4) setTimeout(submit, 120); }
+				if (e.key === "Backspace") { entered = entered.slice(0, -1); render(); }
+			});
+		})();
+
+		/* ================= ЗАПОВНЕННЯ ================= */
+		(function () {
+			$("#rName").textContent = DATA.name;
+			$("#rBirthLabel").textContent = DATA.birthLabel;
+			$("#rBirth").textContent = DATA.birth;
+			$("#rWorkLabel").textContent = DATA.workLabel;
+			$("#rWork").textContent = DATA.work;
+			$("#rTicker").textContent = DATA.ticker;
+		})();
+
+
+		/* ================= ПЛЮС ================= */
+		document.getElementById("plus").addEventListener("click", function () {
+			this.classList.toggle("active");
+		});
+		/* ================= QR ================= */
+		(function () {
+			var modal = $("#modal");
+			var photo = $("#photo");
+
+			photo.addEventListener("click", function () {
+				modal.classList.add("show");
+			});
+			$("#closeModal").addEventListener("click", function () {
+				modal.classList.remove("show");
+			});
+			modal.addEventListener("click", function (e) {
+				if (e.target === modal) modal.classList.remove("show");
+			});
+		})();
+
+	</script>
+
+</body>
+
+</html>

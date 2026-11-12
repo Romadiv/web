@@ -1,0 +1,16 @@
+{
+	"name": "Резюме",
+	"short_name": "Резюме",
+	"start_url": "./index.html",
+	"display": "standalone",
+	"background_color": "#e8e2d6",
+	"theme_color": "#e8e2d6",
+	"icons": [
+		{
+			"src": "icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}
